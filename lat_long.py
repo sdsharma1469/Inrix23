@@ -8,8 +8,9 @@ def getCoordinates(Address):
     address_local = Address
     # get location raw data
     location = app.geocode(f"{address_local}").raw
+    
     # print raw data
     latitude = (location["lat"])
     longitude = (location["lon"])
-    coordinates = f"/lots/v3?point={latitude}%257C{longitude}&radius=500"
+    coordinates = f"/lots/v3?point={latitude}%7C{longitude}&radius=500"
     return coordinates

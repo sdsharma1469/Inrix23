@@ -11,4 +11,6 @@ print(lat_long.getCoordinates("555 Post Street, San Francisco"))
 conn.request("GET", lat_long.getCoordinates("555 Post Street, San Francisco"), payload, headers)
 res = conn.getresponse()
 data = res.read()
-print(data.decode("utf-8"))
+
+decoded = data.decode("utf-8")
+print(decoded)
