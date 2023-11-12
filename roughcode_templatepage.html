@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Content Page</title>
+</head>
+<body>
+    <h1>Dynamic Content Page</h1>
+    <ul>
+        <li><a href="#" id="button1">Button 1</a></li>
+        <li><a href="#" id="button2">Button 2</a></li>
+        <li><a href="#" id="button3">Button 3</a></li>
+    </ul>
+
+    <div id="content">
+        <!-- Initial content displayed when no button is clicked -->
+        <p>Select a button to see different information.</p>
+    </div>
+
+    <script>
+        // Function to update the content based on the clicked button
+        function updateContent(buttonId) {
+            const contentDiv = document.getElementById('content');
+            switch (buttonId) {
+                case 'button1':
+                    contentDiv.innerHTML = '<p>Content for Button 1. This is some information for Button 1.</p>';
+                    break;
+                case 'button2':
+                    contentDiv.innerHTML = '<p>Content for Button 2. This is some information for Button 2.</p>';
+                    break;
+                case 'button3':
+                    contentDiv.innerHTML = '<p>Content for Button 3. This is some information for Button 3.</p>';
+                    break;
+            }
+        }
+
+        // Add event listeners to the buttons
+        document.getElementById('button1').addEventListener('click', function() {
+            updateContent('button1');
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            updateContent('button2');
+        });
+
+        document.getElementById('button3').addEventListener('click', function() {
+            updateContent('button3');
+        });
+    </script>
+</body>
+</html>
