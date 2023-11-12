@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import requests
 
+get_token()
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
@@ -27,11 +28,14 @@ def get_token():
         output = json_data['result']['token']
 
         # Return token
+        print("token is ", output)
         return jsonify(token=output)
 
     except requests.exceptions.RequestException as e:
         # Handle request errors
         return jsonify(error=str(e)), 500
+    
+
 
 # Starting server using the run function
 if __name__ == '__main__':
