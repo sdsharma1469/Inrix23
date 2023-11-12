@@ -4,8 +4,10 @@ import lat_long
 import json
 import http.client
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/gettoken')
@@ -33,8 +35,12 @@ def getOffStreetParking():
         payload = ''
         headers = {
             'accept': 'application/json',
-            'Authorization': "Bearer "+token_x
+            'Authorization': "Bearer "+token_x,
+            'Access-Control-Allow-Origin': 'http://127.0.0.1:8000',
+            'Access-Control-Allow-Credentials': 'true'
         }
+     
+
         address = "555 Post Street"
         url = lat_long.OffGetCoordinates(address)
         

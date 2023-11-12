@@ -1,7 +1,6 @@
 from flask import Flask, jsonify
 import requests
 
-get_token()
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
