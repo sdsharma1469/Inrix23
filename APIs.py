@@ -29,9 +29,9 @@ def get_token():
         return jsonify(error=str(e)), 500
     
 
-@app.route('/getOffStreetParking', methods=['GET'])
-@cross_origin()
-def getOffStreetParking():
+# @app.route('/getOffStreetParking', methods=['GET'])
+# @cross_origin()
+def getOffStreetParking(address):
     token_x = get_token()
     try:
         conn = http.client.HTTPSConnection("api.iq.inrix.com")
@@ -42,9 +42,7 @@ def getOffStreetParking():
             'Access-Control-Allow-Origin': 'http://127.0.0.1:9000',
             'Access-Control-Allow-Credentials': 'true'
         }
-     
 
-        address = request.args.get("addy")
         url = lat_long.OffGetCoordinates(address)
         
         conn.request("GET", url, payload, headers)
@@ -141,10 +139,14 @@ def getOnStreet():
 @app.route('/GroupByZip', methods=['GET'])
 @cross_origin()
 def groupByZip():
+    list=[]
     input_zip = request.args.get("zip")
     with open('data.json', 'r') as file:
         data = json.load(file)  
     df = pd.DataFrame(data)
+    for address in df:
+        list.append(getOffStreetParking(address))
+        df['OffStreet'] = list
     result = df[df["zipcode"] == input_zip]
     result.to_json('filtered_data.json', orient='records')
     return "Data filtered and saved locally."

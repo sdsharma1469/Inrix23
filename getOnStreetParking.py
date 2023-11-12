@@ -17,11 +17,6 @@ conn.request("GET", lat_long.OffGetCoordinates("555 Post Street"), payload, head
 res = conn.getresponse()
 data = res.read()
 decoded = json.loads(data.decode('utf-8'))
-# decoded_rest = json.loads(decoded["result"].decode('utf-8'))
-# count = decoded["count"]
-# hrs_available = decoded["result"][0]["hrs"][0]
-# print("Number of On-Street Parkings available- ", count)
-# print(hrs_available)
 df = pd.DataFrame(decoded)
 print(df.keys())
 length = len(df["result"])

@@ -1,0 +1,75 @@
+[
+    {
+      "address": "44 Page Street, San Francisco",
+      "size": "1800 SF",
+      "type": "General Office",
+      "rate": "$48.00/SF/YR",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "800 Market Street, San Francisco",
+      "size": "5,523 SF",
+      "type": "General Office",
+      "rate": "$69.00 - $72.00/SF/YR",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "1 Polk Street, San Francisco",
+      "size": "1,733 SF",
+      "type": "Street Retail",
+      "rate": "$42.00/SF/YR",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "711 Van Ness Avenue, San Francisco",
+      "size": "3,015 SF",
+      "type": "General Office",
+      "rate": "$4.50/SF/MO",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "490 Post Street, San Francisco",
+      "size": "1,017 SF",
+      "type": "Office - Medical Office",
+      "rate": "$5.50/SF/MO",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "455 Ellis St, San Francisco",
+      "size": "5,808 SF",
+      "type": "Multi-Family",
+      "rate": "-",
+      "price": "$1,995,000",
+      "zipcode": "94102"
+    },
+    {
+      "address": "490 Post Street, San Francisco",
+      "size": "880 SF",
+      "type": "Office - Medical Office",
+      "rate": "-",
+      "price": "$739,000",
+      "zipcode": "94102"
+    },
+    {
+      "address": "535 Taylor St, San Francisco",
+      "size": "1,500 SF",
+      "type": "Retail",
+      "rate": "$3,500.00/MO",
+      "price": "-",
+      "zipcode": "94102"
+    },
+    {
+      "address": "601 Van Ness Ave, San Francisco",
+      "size": "2,376 SF",
+      "type": "Medical Office",
+      "rate": "$4.65/SF/MO",
+      "price": "-",
+      "zipcode": "94102"
+    }
+  ]
+  
