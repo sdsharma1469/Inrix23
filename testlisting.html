@@ -115,24 +115,6 @@
             font-size: 24px;
             color: #333;
         }
-
- .number {
-        display: inline-block;
-        width: 400px;
-        height: 200px;
-        border: 1px solid #ccc;
-        margin: 5px;
-        padding: 10px;
-        font-size: 18px;
-        text-align: center;
-        transition: background-color 0.3s; /* Add a smooth transition */
-    }
-
-    .number:hover {
-        background-color: lightblue; /* Change the background color on hover */
-    }
-
-
     </style>
     <title>Listing Page</title>
 </head>
@@ -157,92 +139,57 @@
 
     <div class="scroll-container">
         <div class="number">
-            <a href="links.html">
-            <button type="button">Listing 1</button>
-            </a>
-
+            <button type="button" onclick="showContent('Content for Plot 1')">Listing 1</button>
             <div class="tooltip">Additional info for Plot 1</div>
         </div>
         <div class="number">
-            <a href="links.html">
-            <button type="button">Listing 2</button>
-        </a>
-
+            <button type="button" onclick="showContent('Content for Plot 2')">Listing 2</button>
             <div class="tooltip">Additional info for Plot 2</div>
         </div>
         <div class="number">
-            <a href="links.html">
-            <button type="button">Listing 3</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 3</div>
+            <button type="button" onclick="showContent('Content for Plot 3')">Listing 3</button>
+            <div class="tooltip">Additional info for Plot 3</div>
         </div>
         <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 4</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 4</div>
+            <button type="button" onclick="showContent('Content for Plot 4')">Listing 4</button>
+            <div class="tooltip">Additional info for Plot 4</div>
         </div>
-    
-    <div class="scroll-container">
-         <a href="links.html">
-            <button type="button">Listing 5</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 5</div>
-            </div>
-
-        <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 6</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 6</div>
-
-        <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 7</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 7</div>
-            </div>
-
-        <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 8</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 8</div>
     </div>
     <div class="scroll-container">
-         <a href="links.html">
-            <button type="button">Listing 9</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 9</div>
+        <div class="number">
+            <button type="button" onclick="showContent('Content for Plot 5')">Listing 5</button>
+            <div class="tooltip">Additional info for Plot 5</div>
         </div>
         <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 10</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 10</div>
+            <button type="button" onclick="showContent('Content for Plot 6')">Listing 6</button>
+            <div class="tooltip">Additional info for Plot 6</div>
         </div>
         <div class="number">
-            <a href="links.html">
-            <button type="button">Listing 11</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 11</div>
+            <button type="button" onclick="showContent('Content for Plot 7')">Listing 7</button>
+            <div class="tooltip">Additional info for Plot 7</div>
         </div>
         <div class="number">
-             <a href="links.html">
-            <button type="button">Listing 12</button>
-            </a>
-
-             <div class="tooltip">Additional info for Plot 12</div>
-     
+            <button type="button" onclick="showContent('Content for Plot 8')">Listing 8</button>
+            <div class="tooltip">Additional info for Plot 8</div>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="number">
+            <button type="button" onclick="showContent('Content for Plot 9')">Listing 9</button>
+            <div class="tooltip">Additional info for Plot 9</div>
+        </div>
+        <div class="number">
+            <button type="button" onclick="showContent('Content for Plot 10')">Listing 10</button>
+            <div class="tooltip">Additional info for Plot 10</div>
+        </div>
+        <div class="number">
+            <button type="button" onclick="showContent('Content for Plot 11')">Listing 11</button>
+            <div class="tooltip">Additional info for Plot 11</div>
+        </div>
+        <div class="number">
+            <button type="button" onclick="showContent('Content for Plot 12')">Listing 12</button>
+            <div class="tooltip">Additional info for Plot 12</div>
+        </div>
     </div>
 
     <div id="content" class="scroll-container"></div>

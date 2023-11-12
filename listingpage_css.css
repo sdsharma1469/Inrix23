@@ -1,0 +1,25 @@
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s, height 0.3s; /* Add height transition */
+
+    /* Set the initial height to zero */
+    height: 0;
+}
+
+.number:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    height: auto; /* Expand the height on hover */
+    padding: 10px; /* You can adjust the padding as needed for the expanded state */
+}
