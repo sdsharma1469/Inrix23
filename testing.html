@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Data Display</title>
+</head>
+<body>
+    <div id="jsonData"></div>
+
+    <script>
+        // Fetch the JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Display the JSON data
+                const jsonDataDiv = document.getElementById('jsonData');
+                jsonDataDiv.innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                // Display an error message if the file couldn't be fetched
+                console.error('Error fetching data:', error);
+                const jsonDataDiv = document.getElementById('jsonData');
+                jsonDataDiv.innerText = 'Error fetching data. Please try again.';
+            });
+    </script>
+</body>
+</html>
