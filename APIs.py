@@ -1,14 +1,16 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import requests
 import lat_long
 import json
 import http.client
 import pandas as pd
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
+
 
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/gettoken')
@@ -136,8 +138,17 @@ def getOnStreet():
     except Exception as e:
         return jsonify(error=str(e)), 500
     
+@app.route('/GroupByZip', methods=['GET'])
+@cross_origin()
+def groupByZip():
+    input_zip = request.args.get("zip")
+    with open('data.json', 'r') as file:
+        data = json.load(file)  
+    df = pd.DataFrame(data)
+    result = df[df["zipcode"] == input_zip]
+    result.to_json('filtered_data.json', orient='records')
+    return "Data filtered and saved locally."
 
-# Starting server using the run function
 if __name__ == '__main__':
     port = 8000
     app.run(port=port, debug=True)

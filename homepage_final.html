@@ -118,6 +118,8 @@
 </head>
 
 <body>
+    <!-- <script type = "text/javascript" src = "script.js"></script> -->
+
 
     <header>
         <img src="Logo_inrix.jpg" alt="Logo">
@@ -137,19 +139,28 @@
     <div class="search-container">
         
         <form action="/action_page.php">
-            <input type="text" placeholder="Enter ZipCode" name="search"> <br><br>
+            <input type="text" placeholder="Enter ZipCode" name="search" id="searchInput"> <br><br>
             <input type="number" placeholder="Min Budget">
             <input type="number" placeholder="Max Budget">
             <br><br>
-            <button type="submit">Search</button>
+            <button type="submit">Submit</button>
+            <button type="button" id = "searchbutton">Search</button>
         </form>
-    </div>
 
+    </div>
     <div class="about-section">
         <h2>About Us</h2>
         <p>Welcome to Urban Utopia, your gateway to discovering the perfect plot tailored to your aspirations and lifestyle! Picture a realm where the vibrancy of city life seamlessly aligns with your preferences, transforming your dreams into reality. Empower your decisions with insights into the locale's potential for business growth, foot traffic, and community dynamics. Our user-friendly interface ensures that your journey to finding the perfect space is not only dynamic but also effortlessly navigable.
         </p>
     </div>
+    <script type="text/javascript">
+        document.getElementById("searchbutton").addEventListener("click", createJson);
+        function createJson() {
+            var zipvar = document.getElementById("searchInput").value
+            fetch('http://127.0.0.1:8000/GroupByZip?zip='+zipvar)
+            console.log("got it")
+         }
+    </script>
 </body>
 
 </html>
