@@ -32,7 +32,7 @@ def get_token():
 
     except requests.exceptions.RequestException as e:
         # Handle request errors
-        return jsonify(error=str(e)), 500
+        return jsonify(error=str(e)), 5000
     
 
 
