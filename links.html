@@ -1,50 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-<style>
-	.header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header img {
-            width: 70px;
-            height: 70px;
-            margin-right: 10px;
-        }
-
-        .header h1 {
-            margin: 0;
-            text-align: center;
-            font-size: 24px;
-        }
-   </style>
-</head>
 <body>
-	<nav>
-        <h4 style="font-size: 16px; color: white; margin-top: 0;">Helping new businesses find their Utopia</h4>
+   <div id="output"></div> 
+   <script>
+      let output = document.getElementById('output');
 
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#people">People</a>
-        <a href="#work">Future</a>
-    </nav>
+      function fetchData() {
+         fetch('http://127.0.0.1:8000/getOffStreetParking')
+            .then(response => response.json())
+            .then(data => {
+               // Display the data in the 'output' div
+               output.innerHTML += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+               console.error('Error fetching data:', error);
+               // Display an error message in the 'output' div
+               output.textContent = 'Error fetching data. Please try again.';
+            });
+      }
 
-    <div class="search-container">
-        
-        <form action="/action_page.php">
-            <input type="text" placeholder="Enter ZipCode" name="search"> <br><br>
-            <input type="number" placeholder="Min Budget">
-            <input type="number" placeholder="Max Budget">
-            <br><br>
-            <button type="submit">Search</button>
-        </form>
-    </div>
+      // Call the fetchData function three times when the page loads
+      for (let i = 0; i < 3; i++) {
+         fetchData();
+      }
+   </script>
 </body>
 </html>
