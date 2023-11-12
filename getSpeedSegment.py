@@ -1,0 +1,29 @@
+import http.client
+import lat_long
+import json
+import collections
+import pandas as pd
+
+conn = http.client.HTTPSConnection("api.iq.inrix.com")
+payload = ''
+headers = {
+'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6IjVuY3J5aDA1NjUiLCJ0b2tlbiI6eyJpdiI6ImYwYjNjNTY0YzRkYTYxYmZkMjJhMDAxNzQ4MWU5ZWQyIiwiY29udGVudCI6IjIzN2RiMjY1YWE3MmZiNGQ3OTczZTc4ZTNjZTZmOTEwMDQ2NmYyNGMwMTIyMGQ3ZGY3ZGFkYzM0YTk4NWFkMzlmOTAyOWJiMWViMTJhNWU0OWQ4Y2U4NjJjZTJjZTYwYjdiMWYwNWFmODJiODY5NTFhNzI0NTU3Mzk4NTQwNGY4ZDJkMjJhNTFhNTQ0ZmI1OTE5OTk1NDdkZDY3OGM4MGUyNTIwMGY2NGNhOTY0MzU0NzI4YzkzNzk2ZmE0MDQ0ODg1YTdlNGJkNGI2NDQzYTRiNGM5OTU3NDdhODFlZjM2ZjNlN2ExMzQ0NzQ5ZTNlN2FjZjMyZDhmODI1NGFiZWU4OWFhZjVmNzRkN2FkN2Q0ZTVhMmU0ZjNjMmFmODAzNTFhNmRmNTVjM2M4ODQ2YWJjNDU5MDExMTY0NmVkNjRhMTFmMDg3ZjM2OWE2YjYwMjBjMjM1YWEyMjdiOWM4NDdmMWRiYWIyNzA1MDc2NzQ2OGUxMDZiOWM4ZTNiMjRhZWYxZDExZTJlNzczNzM5OTVhOGEwMjBhN2NkNTdmNzA1YTAxMmQxODNhMTYzNDU5YWQ5NTg2OTdhNGEzN2IxNTJjNzQxMzRhYzZiMThkNTEzYWYwMzYzMmVkODVjZTliMmU5YmVlNjY5NDAzYjNkMjE1ZmRkMjRlYTNjOWFiYzRkY2Q4MTZjOGVkOTEwNzI1OGZhMDlhZmZmODg0OTlkMmZhNzI3YzZmZjZlZGVkZmVlODhiNmFhZGU1MmZjZWE5M2JkYTY2MmYzNzQ4NzU0NzhjNGM2YmI1N2Y3YmMyZDM1M2YyZjRiNDQ5NjY1MDg1Yjc3YTk4NTdmNzA0MzA3MzIxMjI4NWY5ZWQ1ZTUwNjM1OGNhMWNmIn0sInNlY3VyaXR5VG9rZW4iOnsiaXYiOiJmMGIzYzU2NGM0ZGE2MWJmZDIyYTAwMTc0ODFlOWVkMiIsImNvbnRlbnQiOiIwMzMyOTUzOWZjMDFkOTQzNDcyYzg3ODUyNWVjZjE3OTE4NjdmMTY3MGQxNDM2M2JjN2ExZmY2NmQ5OGI4ODE0ZjYzYmUzYzE5ZDNhODVlNjk4OTc5MDVjIn0sImp0aSI6IjkwYTE4NmU3LTNjMjctNGRhYi05NWFmLWNmOGMzNjc2NDI1YSIsImlhdCI6MTY5OTc2MjAzMywiZXhwIjoxNjk5NzY1NjMzfQ.w96XNeYm29W5DEXr0yfjSFzTFbeeoEKWvk8qxj_QA70\''
+}
+conn.request("GET", "/v1/segments/speed?point=37.7878202%7C-122.4109003&radius=10&SpeedOutputFields=average, speedbucket&Duration=10&StartTime=2023-11-12T04:43:20.084Z", payload, headers)
+res = conn.getresponse()
+data = res.read()
+
+decoded = json.loads(data.decode('utf-8'))
+
+df = pd.DataFrame(decoded)
+
+df= df["result"]["segmentspeeds"][0]["segments"]
+df = pd.DataFrame(df)
+df.set_index('average', inplace=True)
+del df['code']
+del df['type']
+del df['segmentClosed']
+
+print(df.head())
+
+
