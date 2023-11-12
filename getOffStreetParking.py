@@ -1,4 +1,3 @@
-# import http.client
 import lat_long
 import json
 import collections
@@ -11,14 +10,15 @@ headers = {
   'accept': 'application/json',
   'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6IjVuY3J5aDA1NjUiLCJ0b2tlbiI6eyJpdiI6ImFkMDQxYzVlYTY5YzI2OTgyMGQ2MjYzYmU5NGEzODBlIiwiY29udGVudCI6IjFmNjgyMWJjYzUzNmQxZWZhYzY3N2E0YjY5NjI2NWM0YTFlOTE1MjJlMmVkNjU5NmJlYjg0MDdhMjdkYzgwZDk4ODdiN2ZlZGU2OGJjY2MwYTU0YTRiMWE3MzRiNWYzNjQ0MzMzNTI2MWRkNTc1YzBiMzgwYWFlZDBiN2QyMGFhZTkyNTFlMjQ1MjhiYzAxZjMxNGE5ZjAxMjJhOTljMjhhZmIxZDhkMGE2OWQ1MDI1ZDM5ZWE4NzVhNGM0ODhmYTFjNDEwYjQxMDExMzAzODc2NTU0NDBlMmQwMTVlYTRmOTVjYWQ3NjEwMmYwMmM5NDYyYjY4NTYzMTMxMGUxNjRhOGY5ZWE4ODcyOTQ2ODI2ODRkOTBlNjk3MTJmNjFhZmUwMWUyY2RjNWE4ZjMyZDZhZDg4MGQ2NTQ1NDgxNWVjMjBjZjdhNmUyOGVkOWQwN2UxMGYzMDA1MzZkM2M1YTBlZjlkNGFmODMyMGVkYTUwNGZkODBlNTZkNDBhNTkyZmEwMDNlN2MwNjlmMTYzMDUyYWJiN2IwYzRjZTVjZjIxNGVlMTA4Mzg5NWNhMTU2MTJiOGY5MzYxN2U0ZTllZjBkOWFiZmJkZDFmNDYxNjY3NjZlYTQ5YWI1MDg0NjAwODA2MzAxMTEyODQwZjJlMGE1ZDdlZDhlYjAxNDE4MDkwZGIwMTMxMzcwY2IzZDU5ODZiMzUxNzI0NjkxZjhiMTJmYmE5M2VjNjc4NzA5MWZlNzMyYWNiMTVhMzEyZGQwN2MyMjRjZGNhYWQzNTU3MDk5ZGMyYzRhYzE5MzQ3MTMwZDcwZGM2OTIzMWM0YjZiNTdkZmVkZWM5ZDI3MDAyNDdlYjg2NTg5OGY0ZjIzMGVmNjE1YzA4In0sInNlY3VyaXR5VG9rZW4iOnsiaXYiOiJhZDA0MWM1ZWE2OWMyNjk4MjBkNjI2M2JlOTRhMzgwZSIsImNvbnRlbnQiOiIzMjdkNThiZWZkNDJlNGU1OTA2YTRhNjc0ZjUzNjc4Zjk3ZWUzNjAyZjJkYTdlZWI5MWM4NzEwNDBjZjBiMWYzOGUwMDQxZTFiMGEzZjljY2ExNTA0YTI0In0sImp0aSI6Ijg4YTg2MmQ5LThhOTMtNGI5OC1hNDcxLTYwYmVhMTkzMmM3NyIsImlhdCI6MTY5OTc0MzAxOCwiZXhwIjoxNjk5NzQ2NjE4fQ.OeN1RmAcpK3PB0YWT-2xsS42A3oWOSpYyRII_Ty7ZgE\''
 }
-conn.request("GET", lat_long.getCoordinates("555 Post Street"), payload, headers)
+conn.request("GET", lat_long.OffGetCoordinates("555 Post Street"), payload, headers)
 res = conn.getresponse()
 data = res.read()
 decoded = json.loads(data.decode('utf-8'))
 # decoded_rest = json.loads(decoded["result"].decode('utf-8'))
 count = decoded["count"]
-result = decoded["result"][0]["hrs"][0]
-print(count)
-print(result)
+hrs_available = decoded["result"][0]["hrs"][0]
+print("Number of Off-Street Parkings available- ", count)
+print(hrs_available)
+
 
     
