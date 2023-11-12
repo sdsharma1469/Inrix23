@@ -12,5 +12,5 @@ del df['id']
 
 print(df)
 
-return df.to_json('data.json')
+df.to_json('data.json')
 
