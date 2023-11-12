@@ -141,7 +141,14 @@
         }
 
         function showContent(data) {
-            alert(`Type: ${data.type}\nSize: ${data.size}\nRate: ${data.rate}`);
+            // Create a clean and readable popup
+            var popupContent = `
+                <p><strong>Type:</strong> ${data.type}</p>
+                <p><strong>Size:</strong> ${data.size}</p>
+                <p><strong>Rate:</strong> ${data.rate}</p>
+                <!-- Add more fields as needed -->
+            `;
+            alert(popupContent);
         }
 
         async function createTable() {
@@ -169,10 +176,15 @@
                 };
                 numberDiv.appendChild(button);
 
-                // Display only address in the original box
-                var addressElement = document.createElement("p");
-                addressElement.textContent = `Address: ${data.address}`;
-                numberDiv.appendChild(addressElement);
+                // Display address, size, and type in the original box
+                var contentElement = document.createElement("div");
+                contentElement.style.textAlign = "center";
+                contentElement.innerHTML = `
+                    <p><strong>Address:</strong> ${data.address}</p>
+                    <p><strong>Size:</strong> ${data.size}</p>
+                    <p><strong>Type:</strong> ${data.type}</p>
+                `;
+                numberDiv.appendChild(contentElement);
 
                 row.appendChild(numberDiv);
             });

@@ -113,23 +113,17 @@
             font-size: 24px;
             margin: 20px 0;
         }
-
     </style>
 </head>
 
 <body>
-    <!-- <script type = "text/javascript" src = "script.js"></script> -->
-
-
     <header>
         <img src="Logo_inrix.jpg" alt="Logo">
         <h1>Urban Utopia</h1>
     </header>
 
     <nav>
-       <h4 style="font-size: 16px; color: white; margin-top: 0; text-align: center;">Helping new businesses find their Utopia</h4>
-
-
+        <h4 style="font-size: 16px; color: white; margin-top: 0; text-align: center;">Helping new businesses find their Utopia</h4>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
         <a href="#people">People</a>
@@ -137,29 +131,35 @@
     </nav>
 
     <div class="search-container">
-        
-        <form action="/action_page.php">
+        <form action="/action_page.php" onsubmit="return redirectToPage()">
             <input type="text" placeholder="Enter ZipCode" name="search" id="searchInput"> <br><br>
             <input type="number" placeholder="Min Budget">
             <input type="number" placeholder="Max Budget">
             <br><br>
             <button type="submit">Submit</button>
-            <button type="button" id = "searchbutton">Search</button>
+            <button type="button" id="searchbutton">Search</button>
         </form>
-
     </div>
+
     <div class="about-section">
         <h2>About Us</h2>
-        <p>Welcome to Urban Utopia, your gateway to discovering the perfect plot tailored to your aspirations and lifestyle! Picture a realm where the vibrancy of city life seamlessly aligns with your preferences, transforming your dreams into reality. Empower your decisions with insights into the locale's potential for business growth, foot traffic, and community dynamics. Our user-friendly interface ensures that your journey to finding the perfect space is not only dynamic but also effortlessly navigable.
-        </p>
+        <p>Welcome to Urban Utopia, your gateway to discovering the perfect plot tailored to your aspirations and lifestyle! Picture a realm where the vibrancy of city life seamlessly aligns with your preferences, transforming your dreams into reality. Empower your decisions with insights into the locale's potential for business growth, foot traffic, and community dynamics. Our user-friendly interface ensures that your journey to finding the perfect space is not only dynamic but also effortlessly navigable.</p>
     </div>
+
     <script type="text/javascript">
         document.getElementById("searchbutton").addEventListener("click", createJson);
+
         function createJson() {
-            var zipvar = document.getElementById("searchInput").value
-            fetch('http://127.0.0.1:9000/GroupByZip?zip='+zipvar)
-            console.log("got it")
-         }
+            var zipvar = document.getElementById("searchInput").value;
+            fetch('http://127.0.0.1:8000/GroupByZip?zip=' + zipvar)
+            console.log("got it");
+        }
+
+        function redirectToPage() {
+            var zipvar = document.getElementById("searchInput").value;
+            window.location.href = 'http://localhost:8000/Page2.html?zip=' + zipvar;
+            return false; // Prevents the form from submitting (and refreshing the page)
+        }
     </script>
 </body>
 

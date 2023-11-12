@@ -6,8 +6,11 @@
     "rate": "$48.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":510}",
-    "TradeTrips": "23"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "800 Market Street, San Francisco",
@@ -16,8 +19,11 @@
     "rate": "$69.00 - $72.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":526}",
-    "TradeTrips": "44"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "1 Polk Street, San Francisco",
@@ -26,8 +32,11 @@
     "rate": "$42.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":317}",
-    "TradeTrips": "32"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "711 Van Ness Avenue, San Francisco",
@@ -36,8 +45,11 @@
     "rate": "$4.50/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":394}",
-    "TradeTrips": "23"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "490 Post Street, San Francisco",
@@ -46,8 +58,11 @@
     "rate": "$5.50/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":833}",
-    "TradeTrips": "49"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "455 Ellis St, San Francisco",
@@ -56,8 +71,11 @@
     "rate": "-",
     "price": "$1,995,000",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":400}",
-    "TradeTrips": "49"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "490 Post Street, San Francisco",
@@ -66,8 +84,11 @@
     "rate": "-",
     "price": "$739,000",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":833}",
-    "TradeTrips": "49"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "535 Taylor St, San Francisco",
@@ -76,8 +97,11 @@
     "rate": "$3,500.00/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":729}",
-    "TradeTrips": "52"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   },
   {
     "address": "601 Van Ness Ave, San Francisco",
@@ -86,7 +110,10 @@
     "rate": "$4.65/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":409}",
-    "TradeTrips": "22"
+    "OffStreet": "{\n \"message\":\"User is not authorized to access this resource\",\n \"errors\":[{\"statusId\":42,\"systemMessage\":\"Invalid Token.\"}]\n}",
+    "TradeTrips": [
+      "<Response 68 bytes [200 OK]>",
+      500
+    ]
   }
 ]

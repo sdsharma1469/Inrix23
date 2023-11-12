@@ -29,8 +29,8 @@ def get_token():
         return jsonify(error=str(e)), 500
     
 
-# @app.route('/getOffStreetParking', methods=['GET'])
-# @cross_origin()
+@app.route('/getOffStreetParking', methods=['GET'])
+@cross_origin()
 def getOffStreetParking(address):
     token_x = get_token()
     try:
@@ -136,8 +136,8 @@ def getOnStreet():
     except Exception as e:
         return jsonify(error=str(e)), 500
     
-@app.route('/GroupByZip', methods=['GET'])
-@cross_origin()
+# @app.route('/GroupByZip', methods=['GET'])
+# @cross_origin()
 def groupByZip():
     list=[]
     input_zip = request.args.get("zip")
