@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<a href="homepage_final.html" id="homeButton">Home</a>
+
+<script>
+    function findSum() {
+        
+        fetch("http://localhost:8000/getOffStreetParking")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); 
+            })
+            .then(data => {
+        
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    // Add a click event listener to the "Home" button to call the findSum function
+    document.getElementById('homeButton').addEventListener('click', findSum);
+</script>
+
+</head>
+<body></body>
+</html>
