@@ -24,11 +24,13 @@ decoded = json.loads(data.decode('utf-8'))
 df = pd.DataFrame(decoded)
 length = len(df["result"])
 count = 0
+print(df.keys())
+print(df["MeterCount"])
 while count<length: 
     if(df["result"][count]["probability"] == None): 
         count = count+1
     else:
-        print(df["result"][count]["name"] + " Probability to Find Parking: ", df["result"][count]["probability"], "%")
+        print(df["result"][count]["name"] + " Probability to Find Parking: ", df["result"][count]["probability"], "%", "Meter Count:", df["MeterCount"][count])
     
     count = count +1
 
