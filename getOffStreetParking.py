@@ -3,6 +3,7 @@ import json
 import collections
 import http.client
 
+
 conn = http.client.HTTPSConnection("api.iq.inrix.com")
 payload = ''
 headers = {

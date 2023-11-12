@@ -5,6 +5,7 @@ import json
 import http.client
 import pandas as pd
 
+
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
@@ -89,6 +90,46 @@ def getSeg():
 
     print(df.head())
     return df.head()
+
+@app.route('/getOnStreet')
+def getOnStreet():
+    token_x = get_token()
+    try:
+        conn = http.client.HTTPSConnection("api.iq.inrix.com")
+        payload = ''
+        headers = {
+            'accept': 'application/json',
+            'Authorization': "Bearer "+token_x
+        }
+        address = "555 Post Street"
+        url = lat_long.OnGetCoordinates(address)
+        
+        conn.request("GET", url, payload, headers)
+        res = conn.getresponse()
+        data = res.read()
+        decoded = json.loads(data.decode('utf-8'))
+        count = decoded.get("count")
+        hrs_available = decoded.get("result", [])[0].get("hrs", [])[0]
+
+        df = pd.DataFrame(decoded)
+        print(df.keys())
+        length = len(df["result"])
+        count = 0
+        print(df.keys())
+        print(df["MeterCount"])
+        while count<length: 
+            if(df["result"][count]["probability"] == None): 
+                count = count+1
+            else:
+                print(df["result"][count]["name"] + " Probability to Find Parking: ", df["result"][count]["probability"], "%", "Meter Count:", df["MeterCount"][count])
+            
+            count = count +1
+
+        return jsonify(count=count, hrs_available=hrs_available)
+
+    except Exception as e:
+        return jsonify(error=str(e)), 500
+    
 
 # Starting server using the run function
 if __name__ == '__main__':
