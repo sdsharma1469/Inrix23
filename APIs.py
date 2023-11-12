@@ -5,11 +5,10 @@ import json
 import http.client
 import pandas as pd
 from flask_cors import CORS, cross_origin
-
-
-
 app = Flask(__name__)
 CORS(app)
+
+CORS(app, resources={r"/getOffStreetParking": {"origins": "http://localhost:9000"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
@@ -30,7 +29,8 @@ def get_token():
         return jsonify(error=str(e)), 500
     
 
-@app.route('/getOffStreetParking')
+@app.route('/getOffStreetParking', methods=['GET'])
+@cross_origin()
 def getOffStreetParking():
     token_x = get_token()
     try:
@@ -39,12 +39,12 @@ def getOffStreetParking():
         headers = {
             'accept': 'application/json',
             'Authorization': "Bearer "+token_x,
-            'Access-Control-Allow-Origin': 'http://127.0.0.1:8000',
+            'Access-Control-Allow-Origin': 'http://127.0.0.1:9000',
             'Access-Control-Allow-Credentials': 'true'
         }
      
 
-        address = "555 Post Street"
+        address = request.args.get("addy")
         url = lat_long.OffGetCoordinates(address)
         
         conn.request("GET", url, payload, headers)
@@ -150,7 +150,7 @@ def groupByZip():
     return "Data filtered and saved locally."
 
 if __name__ == '__main__':
-    port = 8000
+    port = 9000
     app.run(port=port, debug=True)
 
 

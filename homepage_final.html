@@ -157,7 +157,7 @@
         document.getElementById("searchbutton").addEventListener("click", createJson);
         function createJson() {
             var zipvar = document.getElementById("searchInput").value
-            fetch('http://127.0.0.1:8000/GroupByZip?zip='+zipvar)
+            fetch('http://127.0.0.1:9000/GroupByZip?zip='+zipvar)
             console.log("got it")
          }
     </script>
