@@ -97,19 +97,8 @@
     </div>
 
     <div class="scrollmenu">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
+        
         <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#support">Support</a>
-        <a href="#blog">Blog</a>
-        <a href="#tools">Tools</a>
-        <a href="#base">Base</a>
-        <a href="#custom">Custom</a>
-        <a href="#more">More</a>
-        <a href="#logo">Logo</a>
-        <a href="#friends">Friends</a>
-        <a href="#partners">Partners</a>
         <a href="#people">People</a>
         <a href="#work">Work</a>
     </div>
@@ -131,7 +120,7 @@
         // Function to fetch JSON data from a file
         async function fetchJsonData() {
             try {
-                const response = await fetch('filtered_data.json');
+                const response = await fetch('test_data.json');
                 const data = await response.json();
                 return data;
             } catch (error) {
@@ -143,10 +132,12 @@
         function showContent(data) {
             // Create a clean and readable popup
             var popupContent = `
-                <p><strong>Type:</strong> ${data.type}</p>
-                <p><strong>Size:</strong> ${data.size}</p>
-                <p><strong>Rate:</strong> ${data.rate}</p>
-                <!-- Add more fields as needed -->
+                Type: ${data.type}
+                Size: ${data.size}
+                Rate: ${data.rate}
+                Offstreet parking: ${data.OffStreet}
+                crowd frequency : ${data.TradeTrips}
+               
             `;
             alert(popupContent);
         }

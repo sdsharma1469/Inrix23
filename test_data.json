@@ -6,7 +6,7 @@
     "rate": "$48.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":510}",
+    "OffStreet": "510",
     "TradeTrips": "23"
   },
   {
@@ -16,7 +16,7 @@
     "rate": "$69.00 - $72.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":526}",
+    "OffStreet": "526",
     "TradeTrips": "44"
   },
   {
@@ -26,7 +26,7 @@
     "rate": "$42.00/SF/YR",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":317}",
+    "OffStreet": "317",
     "TradeTrips": "32"
   },
   {
@@ -36,7 +36,7 @@
     "rate": "$4.50/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":394}",
+    "OffStreet": "394",
     "TradeTrips": "23"
   },
   {
@@ -46,7 +46,7 @@
     "rate": "$5.50/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":833}",
+    "OffStreet": "833",
     "TradeTrips": "49"
   },
   {
@@ -56,7 +56,7 @@
     "rate": "-",
     "price": "$1,995,000",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":400}",
+    "OffStreet": "400",
     "TradeTrips": "49"
   },
   {
@@ -66,7 +66,7 @@
     "rate": "-",
     "price": "$739,000",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":833}",
+    "OffStreet": "833",
     "TradeTrips": "49"
   },
   {
@@ -76,7 +76,7 @@
     "rate": "$3,500.00/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":729}",
+    "OffStreet": "729",
     "TradeTrips": "52"
   },
   {
@@ -86,7 +86,7 @@
     "rate": "$4.65/SF/MO",
     "price": "-",
     "zipcode": "94102",
-    "OffStreet": "{\"count\":409}",
+    "OffStreet": "409",
     "TradeTrips": "22"
   }
 ]
